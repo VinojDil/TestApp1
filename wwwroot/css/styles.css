@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 1px;
+}
+
+.text-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sauce', sans-serif;
+  }
+
+#vid #vidText {
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .image-slider .col-3 {
+        display: none;
+      }
+    .image-slider .col-12 {
+        display: block;
+      }
+}
+
+@media (min-width: 769px) {
+    #barimg1{
+        max-width: 25%;
+        padding-left: 0px;
+    }
+
+}
