@@ -60,3 +60,37 @@ function adjustTextBoxesPosition() {
     box4.style.top = topBox4 + 'px';
 }
 */
+
+//Sending data to SQL database
+// Add an event listener for the button
+document.getElementById('findOutMoreButton').addEventListener('click', function () {
+    // Get the email input and HTML title as data
+    const email = document.getElementById('emailInput').value;
+    const styleName = document.title; // Retrieve the title of the page
+
+    // Check if the email field is not empty
+    if (email) {
+        // Make an AJAX call to send data to the backend
+        fetch('/api/viewerRequests', {
+            method: 'POST', // HTTP method
+            headers: {
+                'Content-Type': 'application/json', // Specify content type
+            },
+            body: JSON.stringify({ email, styleName }) // Convert data to JSON format
+        })
+            .then(response => {
+                if (response.ok) {
+                    // Display the thank you message on success
+                    document.getElementById('thankYouMessage').style.display = 'block';
+                } else {
+                    alert('Failed to submit data. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error); // Log any errors
+                alert('An error occurred. Please try again.');
+            });
+    } else {
+        alert('Please enter an email address.'); // Validation for empty email field
+    }
+});
