@@ -3,38 +3,63 @@ body {
     padding: 1px;
 }
 
+@font-face {
+    font-family: 'OpenSauceOne-Regular';
+    src: url('fonts/OpenSauceOne-Regular.ttf') format('truetype');
+    font-family: 'OpenSauceSans-ExtraBold';
+    src: url('fonts/OpenSauceSans-ExtraBold.tff') format('truetype');
+}
+
+p {
+    font-family: 'OpenSauceOne-Regular';
+}
+
+.hdrs {
+    font-family: 'OpenSauceSans-ExtraBold';
+}
+
 .text-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Open Sauce', sans-serif;
-  }
+    font-family: 'OpenSauceOne-Regular',
+}
 
 #vid #vidText {
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  padding: 10px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.8);
-  position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .image-slider .col-3 {
         display: none;
-      }
+    }
+
     .image-slider .col-12 {
         display: block;
-      }
+    }
+
+    #firstimg {
+        padding-left: 5%;
+        padding-top: 5%;
+    }
 }
 
 @media (min-width: 769px) {
-    #barimg1{
+    #barimg1 {
         max-width: 25%;
         padding-left: 0px;
     }
 
+    #firstimg {
+        padding-left: 3%;
+        padding-top: 3%;
+    }
 }
